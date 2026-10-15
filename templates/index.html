@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="resumen" aria-label="Resumen">
+  <div class="card total"><span>{{ total }}</span>Total</div>
+  {% for e in estados %}
+    <div class="card"><span>{{ por_estado[e] }}</span>{{ e }}</div>
+  {% endfor %}
+</section>
+
+<form method="get" class="filtros">
+  <label>Estado
+    <select name="estado">
+      <option value="">Todos</option>
+      {% for e in estados %}<option {{ 'selected' if e == f_estado }}>{{ e }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Prioridad
+    <select name="prioridad">
+      <option value="">Todas</option>
+      {% for p in prioridades %}<option {{ 'selected' if p == f_prioridad }}>{{ p }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Categoría
+    <select name="categoria">
+      <option value="">Todas</option>
+      {% for c in categorias %}
+        <option value="{{ c.id }}" {{ 'selected' if c.id|string == f_categoria }}>{{ c.nombre }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <button type="submit">Filtrar</button>
+  <a href="{{ url_for('index') }}">Limpiar</a>
+</form>
+
+{% if tickets %}
+<table>
+  <thead>
+    <tr><th>ID</th><th>Título</th><th>Solicitante</th><th>Categoría</th>
+        <th>Prioridad</th><th>Estado</th><th>Responsable</th><th>Creada</th></tr>
+  </thead>
+  <tbody>
+  {% for t in tickets %}
+    <tr>
+      <td><a href="{{ url_for('detalle_ticket', ticket_id=t.id) }}">{{ t.codigo }}</a></td>
+      <td>{{ t.titulo }}</td>
+      <td>{{ t.solicitante }}</td>
+      <td>{{ t.categoria }}</td>
+      <td><span class="tag p-{{ t.prioridad|lower|replace('í','i') }}">{{ t.prioridad }}</span></td>
+      <td><span class="tag e-{{ t.estado|lower|replace(' ','-') }}">{{ t.estado }}</span></td>
+      <td>{{ t.responsable or '—' }}</td>
+      <td>{{ t.fecha_creacion }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+  <p class="vacio">No hay solicitudes que coincidan con los filtros.</p>
+{% endif %}
+{% endblock %}

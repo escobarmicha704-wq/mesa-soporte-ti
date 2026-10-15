@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Nueva solicitud · Mesa de Soporte TI{% endblock %}
+{% block content %}
+<h2>Nueva solicitud de soporte</h2>
+<form method="post" class="formulario">
+  <label>Solicitante *
+    <input name="solicitante" value="{{ datos.get('solicitante', '') }}" required minlength="3">
+  </label>
+  <label>Título *
+    <input name="titulo" value="{{ datos.get('titulo', '') }}" required minlength="5" maxlength="100">
+  </label>
+  <label>Descripción *
+    <textarea name="descripcion" rows="5" required minlength="10">{{ datos.get('descripcion', '') }}</textarea>
+  </label>
+  <label>Categoría *
+    <select name="categoria_id" required>
+      <option value="">Seleccione…</option>
+      {% for c in categorias %}
+        <option value="{{ c.id }}" {{ 'selected' if c.id|string == datos.get('categoria_id') }}>{{ c.nombre }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Prioridad *
+    <select name="prioridad" required>
+      <option value="">Seleccione…</option>
+      {% for p in prioridades %}
+        <option {{ 'selected' if p == datos.get('prioridad') }}>{{ p }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <button type="submit">Registrar solicitud</button>
+  <a href="{{ url_for('index') }}">Cancelar</a>
+</form>
+{% endblock %}

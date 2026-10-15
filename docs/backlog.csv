@@ -1,0 +1,32 @@
+ID,Título,Rol,Hito,Prioridad,Estimación (h),Fecha objetivo,Tipo
+T01,"Definir problema, objetivo y alcance v0.1",Líder de Proyecto y Control,H1,Alta,1.5,2026-09-29,Tarea
+T02,Crear repositorio Git y README inicial,Solución y Desarrollo,H1,Alta,0.5,2026-09-29,Tarea
+T03,Crear tablero GitHub Projects con columnas y campos,Líder de Proyecto y Control,H1,Alta,0.5,2026-09-29,Tarea
+T04,Redactar 6-10 historias/requisitos,Líder de Proyecto y Control,H1,Alta,1.5,2026-09-29,Historia
+T05,Modelo de datos conceptual,"Datos, Calidad y Pruebas",H1,Media,1.0,2026-09-29,Tarea
+T06,Boceto inicial de interfaz y arquitectura,Solución y Desarrollo,H1,Media,1.5,2026-09-29,Tarea
+T07,Cronograma preliminar y minuta de hito H1,Líder de Proyecto y Control,H1,Media,1.0,2026-09-29,Tarea
+T08,Alcance v1.0 y backlog priorizado,Líder de Proyecto y Control,H2,Alta,1.5,2026-09-30,Tarea
+T09,Estructura de desglose de trabajo (EDT),Líder de Proyecto y Control,H2,Alta,1.0,2026-09-30,Tarea
+T10,"Recursos, estimación de horas y costos",Líder de Proyecto y Control,H2,Alta,1.5,2026-09-30,Tarea
+T11,Modelo ER y script inicial schema.sql,"Datos, Calidad y Pruebas",H2,Alta,2.0,2026-09-30,Tarea
+T12,Wireframes de las 3 pantallas,Solución y Desarrollo,H2,Media,2.0,2026-09-30,Tarea
+T13,Arquitectura preliminar documentada,Solución y Desarrollo,H2,Media,1.0,2026-09-30,Tarea
+T14,Plan de pruebas inicial,"Datos, Calidad y Pruebas",H2,Media,1.5,2026-09-30,Tarea
+T15,Estructura base Flask y conexión a SQLite,Solución y Desarrollo,H3,Alta,2.0,2026-10-06,Tarea
+T16,RF-01/RF-02 Registrar solicitud con id y fecha,Solución y Desarrollo,H3,Alta,2.5,2026-10-06,Historia
+T17,RF-03 Listar solicitudes,Solución y Desarrollo,H3,Alta,1.5,2026-10-06,Historia
+T18,RF-04 Asignar responsable y cambiar estado,Solución y Desarrollo,H3,Alta,2.0,2026-10-06,Historia
+T19,Datos de prueba (seed.sql),"Datos, Calidad y Pruebas",H3,Media,1.0,2026-10-06,Tarea
+T20,Pruebas funcionales iniciales y registro de defectos,"Datos, Calidad y Pruebas",H3,Alta,2.0,2026-10-06,Tarea
+T21,Reporte de avance N.º 1 (planificado vs real),Líder de Proyecto y Control,H3,Media,1.5,2026-10-06,Tarea
+T22,"RF-05 Filtros por estado, prioridad, categoría",Solución y Desarrollo,H4,Alta,1.5,2026-10-07,Historia
+T23,RF-06 Resumen total y por estado,Solución y Desarrollo,H4,Alta,1.0,2026-10-07,Historia
+T24,Validaciones básicas y manejo de errores (CAL-01),"Datos, Calidad y Pruebas",H4,Alta,2.0,2026-10-07,Tarea
+T25,"Pruebas de integración, defectos y retest","Datos, Calidad y Pruebas",H4,Alta,2.0,2026-10-07,Tarea
+T26,Análisis y registro del cambio/imprevisto,Líder de Proyecto y Control,H4,Media,1.5,2026-10-07,Cambio
+T27,Reporte de avance N.º 2,Líder de Proyecto y Control,H4,Media,1.5,2026-10-07,Tarea
+T28,README de ejecución y verificación de reproducibilidad,Solución y Desarrollo,FINAL,Alta,1.0,2026-10-13,Tarea
+T29,Informe final (15 secciones) y anexos,Líder de Proyecto y Control,FINAL,Alta,6.0,2026-10-13,Tarea
+T30,Matriz de rotación y contribuciones por hito,Líder de Proyecto y Control,FINAL,Media,1.0,2026-10-13,Tarea
+T31,Presentación breve y demo del MVP,Líder de Proyecto y Control,FINAL,Alta,2.5,2026-10-13,Tarea

@@ -1,0 +1,28 @@
+:root { --azul:#1f4e79; --gris:#f3f5f8; --borde:#d5dbe3; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, Segoe UI, Arial, sans-serif; background:var(--gris); color:#222; }
+header { background:var(--azul); color:#fff; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+header h1 { margin:0; font-size:1.3rem; } header a { color:#fff; text-decoration:none; }
+nav a { margin-left:16px; } .btn { background:#fff; color:var(--azul)!important; padding:6px 12px; border-radius:6px; font-weight:600; }
+main { max-width:1100px; margin:24px auto; padding:0 16px; }
+footer { text-align:center; color:#777; font-size:.8rem; padding:24px; }
+.resumen { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+.card { background:#fff; border:1px solid var(--borde); border-radius:8px; padding:12px 20px; min-width:110px; text-align:center; }
+.card span { display:block; font-size:1.8rem; font-weight:700; color:var(--azul); }
+.card.total { background:var(--azul); color:#fff; } .card.total span { color:#fff; }
+.filtros { display:flex; gap:12px; align-items:flex-end; flex-wrap:wrap; margin-bottom:16px; }
+label { display:flex; flex-direction:column; font-size:.85rem; gap:4px; }
+input, select, textarea, button { font:inherit; padding:7px 9px; border:1px solid var(--borde); border-radius:6px; }
+button { background:var(--azul); color:#fff; border:0; cursor:pointer; }
+table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--borde); }
+th, td { padding:8px 10px; border-bottom:1px solid var(--borde); text-align:left; font-size:.9rem; }
+th { background:#e8edf3; }
+.tag { padding:2px 8px; border-radius:10px; font-size:.78rem; background:#e5e7eb; }
+.p-critica { background:#f8c9c9; } .p-alta { background:#fde1b8; } .p-media { background:#fff3b0; } .p-baja { background:#d6efd6; }
+.e-nuevo { background:#cfe3ff; } .e-en-proceso { background:#fff3b0; } .e-resuelto { background:#d6efd6; } .e-cerrado { background:#ddd; }
+.formulario { background:#fff; border:1px solid var(--borde); border-radius:8px; padding:16px; display:grid; gap:12px; max-width:640px; margin-bottom:20px; }
+.flash { padding:10px 14px; border-radius:6px; margin-bottom:10px; }
+.flash.ok { background:#d6efd6; } .flash.error { background:#f8c9c9; }
+.ficha { display:grid; grid-template-columns:140px 1fr; gap:6px 12px; background:#fff; padding:16px; border:1px solid var(--borde); border-radius:8px; }
+.ficha dt { font-weight:600; } .ficha dd { margin:0; }
+.vacio { background:#fff; padding:20px; border-radius:8px; text-align:center; }

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{{ t.codigo }} · Mesa de Soporte TI{% endblock %}
+{% block content %}
+<h2>{{ t.codigo }} — {{ t.titulo }}</h2>
+<dl class="ficha">
+  <dt>Solicitante</dt><dd>{{ t.solicitante }}</dd>
+  <dt>Categoría</dt><dd>{{ t.categoria }}</dd>
+  <dt>Prioridad</dt><dd>{{ t.prioridad }}</dd>
+  <dt>Creada</dt><dd>{{ t.fecha_creacion }}</dd>
+  <dt>Descripción</dt><dd>{{ t.descripcion }}</dd>
+</dl>
+
+<h3>Gestionar solicitud</h3>
+<form method="post" class="formulario">
+  <label>Responsable
+    <select name="responsable_id">
+      <option value="">Sin asignar</option>
+      {% for u in usuarios %}
+        <option value="{{ u.id }}" {{ 'selected' if u.id == t.responsable_id }}>{{ u.nombre }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Estado
+    <select name="estado">
+      {% for e in estados %}<option {{ 'selected' if e == t.estado }}>{{ e }}</option>{% endfor %}
+    </select>
+  </label>
+  <button type="submit">Guardar cambios</button>
+  <a href="{{ url_for('index') }}">Volver al listado</a>
+</form>
+
+<h3>Historial de cambios</h3>
+<table>
+  <thead><tr><th>Fecha</th><th>Campo</th><th>Antes</th><th>Después</th></tr></thead>
+  <tbody>
+  {% for h in historial %}
+    <tr><td>{{ h.fecha }}</td><td>{{ h.campo }}</td><td>{{ h.valor_antes or '—' }}</td><td>{{ h.valor_nuevo or '—' }}</td></tr>
+  {% else %}
+    <tr><td colspan="4">Sin cambios registrados.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
